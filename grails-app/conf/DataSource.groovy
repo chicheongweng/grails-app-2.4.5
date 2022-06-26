@@ -1,10 +1,12 @@
 dataSource {
     pooled = false
     jmxExport = true
-    driverClassName = "com.mysql.jdbc.Driver"
+    driverClassName = "com.mysql.cj.jdbc.Driver"
+    dialect = "org.hibernate.dialect.MySQLDialect"
     username = "sa"
     password = "password"
     url = "jdbc:mysql://127.0.0.1/testdb?useUnicode=true&characterEncoding=UTF-8&verifyServerCertificate=false&useSSL=false"
+    dbCreate = "create"
 }
 
 hibernate {
@@ -20,17 +22,14 @@ hibernate {
 environments {
     development {
         dataSource {
-            dbCreate = "create-drop" // one of 'create', 'create-drop', 'update', 'validate', ''
         }
     }
     test {
         dataSource {
-            dbCreate = "create-drop"
         }
     }
     production {
         dataSource {
-            dbCreate = "create-drop"
             properties {
                // See http://grails.org/doc/latest/guide/conf.html#dataSource for documentation
                jmxEnabled = true
