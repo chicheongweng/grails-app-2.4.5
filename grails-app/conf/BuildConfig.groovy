@@ -44,11 +44,17 @@ grails.project.dependency.resolution = {
         //mavenRepo "http://repository.codehaus.org"
         //mavenRepo "http://download.java.net/maven/2/"
         //mavenRepo "http://repository.jboss.com/maven2/"
+        mavenRepo "https://repo1.maven.org/maven2"
+        mavenRepo "https://mvnrepository.com/artifact"
+        mavenRepo "https://mvnrepository.com/artifact/org.springframework"
+        mavenRepo "https://mvnrepository.com/artifact/org.springframework/spring"
+        mavenRepo "https://mvnrepository.com/artifact/org.springframework/spring-aop"
+
     }
 
     dependencies {
         // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes e.g.
-        // runtime 'mysql:mysql-connector-java:5.1.29'
+        runtime 'mysql:mysql-connector-java:8.0.29'
         // runtime 'org.postgresql:postgresql:9.3-1101-jdbc41'
         test "org.grails:grails-datastore-test-support:1.0.2-grails-2.4"
     }
