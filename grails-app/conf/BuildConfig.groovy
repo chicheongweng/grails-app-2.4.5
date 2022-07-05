@@ -28,7 +28,7 @@ grails.project.dependency.resolution = {
         // specify dependency exclusions here; for example, uncomment this to disable ehcache:
         // excludes 'ehcache'
     }
-    log "error" // log level of Ivy resolver, either 'error', 'warn', 'info', 'debug' or 'verbose'
+    log "warn" // log level of Ivy resolver, either 'error', 'warn', 'info', 'debug' or 'verbose'
     checksums true // Whether to verify checksums on resolve
     legacyResolve false // whether to do a secondary resolve on plugin installation, not advised and here for backwards compatibility
 
@@ -44,12 +44,8 @@ grails.project.dependency.resolution = {
         //mavenRepo "http://repository.codehaus.org"
         //mavenRepo "http://download.java.net/maven/2/"
         //mavenRepo "http://repository.jboss.com/maven2/"
-        mavenRepo "https://repo1.maven.org/maven2"
-        mavenRepo "https://mvnrepository.com/artifact"
-        mavenRepo "https://mvnrepository.com/artifact/org.springframework"
-        mavenRepo "https://mvnrepository.com/artifact/org.springframework/spring"
-        mavenRepo "https://mvnrepository.com/artifact/org.springframework/spring-aop"
-
+        //mavenRepo "https://repo1.maven.org/maven2"
+        //mavenRepo "https://mvnrepository.com/artifact"
     }
 
     dependencies {
@@ -58,6 +54,7 @@ grails.project.dependency.resolution = {
         // runtime 'org.postgresql:postgresql:9.3-1101-jdbc41'
         test "org.grails:grails-datastore-test-support:1.0.2-grails-2.4"
         compile "org.apache.commons:commons-dbcp2:2.9.0"
+        //compile "org.grails.plugins:redis:1.5.4"
     }
 
     plugins {
@@ -65,14 +62,15 @@ grails.project.dependency.resolution = {
         build ":tomcat:7.0.55.2" // or ":tomcat:8.0.20"
 
         // plugins for the compile step
-        compile ":scaffolding:2.1.2"
-        compile ':cache:1.1.8'
-        compile ":asset-pipeline:2.1.5"
+        //compile ":scaffolding:2.1.2"
+        //compile ':cache:1.1.8'
+        //compile ":asset-pipeline:2.1.5"
 
         // plugins needed at runtime but not for compilation
         runtime ":hibernate4:4.3.8.1" // or ":hibernate:3.6.10.18"
-        runtime ":database-migration:1.4.0"
-        runtime ":jquery:1.11.1"
+        //runtime ":database-migration:1.4.0"
+        //runtime ":jquery:1.11.1"
+        runtime ":redis:1.5.4"
 
         // Uncomment these to enable additional asset-pipeline capabilities
         //compile ":sass-asset-pipeline:1.9.0"
